@@ -1,4 +1,5 @@
 import numpy as np
+
 from calculator._image import Image
 
 
