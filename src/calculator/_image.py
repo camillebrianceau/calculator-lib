@@ -9,6 +9,10 @@ class Image:
             raise TypeError("Image data should be a 2D Numpy array.")
         self._data: np.ndarray = data
 
+    @property
+    def data(self) -> np.ndarray:
+        return self._data
+
     @classmethod
     def from_array(cls, data: list):
         return cls(np.array(data))
