@@ -1,5 +1,5 @@
 [project]
-name = "calculator"
+name = "calculator-nico"
 version = "0.1.0"
 description = "Python library to compute things."
 authors = [
@@ -7,14 +7,15 @@ authors = [
 ]
 license = {text = "MIT"}
 readme = "README.md"
-packages = [
-    { include = "calculator", from = "src" },
-]
 requires-python = ">=3.12"
 dependencies = [
     "numpy (>=2.0.0)"
 ]
 
+[tool.poetry]
+packages = [
+    { include = "calculator", from = "src" },
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
