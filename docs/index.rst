@@ -14,3 +14,4 @@ This is the documentation of the image calculator library. It's gonna be great!
    :caption: Contents:
 
    quick_start
+   changelog
