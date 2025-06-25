@@ -1,6 +1,5 @@
-import numpy as np
-
 from ._image import Image
+from ._utils import check_images_compatibility
 
 __all__ = ["add"]
 
@@ -24,16 +23,5 @@ def add(image1: Image, image2: Image) -> Image:
     array([[2, 3],
            [4, 5]])
     """
-    _check_images_compatibility(image1, image2)
+    check_images_compatibility(image1, image2)
     return Image.from_array(image1.data + image2.data)
-
-
-def _check_images_compatibility(image1: Image, image2: Image):
-    try:
-        np.broadcast_shapes(image1.data.shape, image2.data.shape)
-    except ValueError:
-        raise ValueError(
-            "Provided images have incompatile shapes.\n"
-            f"Image 1 is {image1.data.shape}.\n"
-            f"Image 2 is {image2.data.shape}."
-        )
