@@ -1,0 +1,17 @@
+name: Functional tests
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install
+        run: poetry install
+      - name: Run functional tests
+        run: poetry run pytest -vv tests/functional
